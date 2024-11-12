@@ -1,0 +1,17 @@
+wheel::users:
+  - root
+  - user1
+  - admin
+
+sudo::users:
+  - 'user1'
+  - 'admin'
+
+sudo::files:
+  - '/usr/local/bin/some_script'
+  - '/usr/local/bin/another_script'
+
+suid_sgid::whitelist:
+  - '/usr/bin/passwd'
+  - '/usr/bin/sudo'
+  - '/bin/ping'

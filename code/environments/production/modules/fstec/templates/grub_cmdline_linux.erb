@@ -1,0 +1,8 @@
+define grub_cmdline_linux ($value, $ensure = 'present') {
+  file_line { "grub_${title}":
+    path  => '/etc/default/grub',
+    line  => "GRUB_CMDLINE_LINUX_DEFAULT=\"${value}\"",
+    match => '^GRUB_CMDLINE_LINUX_DEFAULT=',
+    notify => Exec['update-grub'],
+  }
+}

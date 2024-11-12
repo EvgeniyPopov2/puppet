@@ -1,0 +1,4 @@
+# /etc/sudoers.d/limited_users
+<% @sudo_users.each do |user| -%>
+<%= user %> ALL=(ALL) ALL
+<% end -%>
